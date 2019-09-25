@@ -1,90 +1,26 @@
 {
-    "name": "YunoHost example app",
-    "id": "ynhexample",
+    "name": "YunoHost example app",  TODO-YNH what rules
+    "id": "ynhexample",             TODO-YNH what rules
     "packaging_format": 1,
     "description": {
-        "en": "Example package for YunoHost application.",
-        "fr": "Exemple de package d’application pour YunoHost."
+        "en": "Offline version of the Internet Archive.",
+        "fr": "Version hors ligne de l’Internet Archive.",
+        "mr": "इंटरनेट आर्काइव्हची ऑफलाइन आवृत्ती."
     },
-    "version": "1.0~ynh1",
-    "url": "https://example.com",
-    "license": "free",
+    "version": "0.2.51~ynh1",
+    "url": "https://github.org/internetarchive/dweb-mirror",
+    "license": "AGPL-3.0-only",
     "maintainer": {
-        "name": "John doe",
-        "email": "john.doe@example.com",
-        "url": "http://example.com"
+        "name": "Mitra Ardron",
+        "email": "mitra@mitra.biz",
+        "url": "https://mitra.biz"
     },
     "requirements": {
         "yunohost": ">= 3.5"
     },
-    "multi_instance": true,
-    "services": [
-        "nginx",
-        "php7.0-fpm",
-        "mysql"
-    ],
+    "multi_instance": false,
+    "services": [ ],
     "arguments": {
-        "install" : [
-            {
-                "name": "domain",
-                "type": "domain",
-                "ask": {
-                    "en": "Choose a domain name for ynhexample",
-                    "fr": "Choisissez un nom de domaine pour ynhexample"
-                },
-                "example": "example.com"
-            },
-            {
-                "name": "path",
-                "type": "path",
-                "ask": {
-                    "en": "Choose a path for ynhexample",
-                    "fr": "Choisissez un chemin pour ynhexample"
-                },
-                "example": "/example",
-                "default": "/example"
-            },
-            {
-                "name": "admin",
-                "type": "user",
-                "ask": {
-                    "en": "Choose an admin user",
-                    "fr": "Choisissez l’administrateur"
-                },
-                "example": "johndoe"
-            },
-            {
-                "name": "is_public",
-                "type": "boolean",
-                "ask": {
-                    "en": "Is it a public application?",
-                    "fr": "Est-ce une application publique ?"
-                },
-                "default": true
-            },
-            {
-                "name": "language",
-                "type": "string",
-                "ask": {
-                    "en": "Choose the application language",
-                    "fr": "Choisissez la langue de l'application"
-                },
-                "choices": ["fr", "en"],
-                "default": "fr"
-            },
-            {
-                "name": "password",
-                "type": "password",
-                "ask": {
-                    "en": "Set the administrator password",
-                    "fr": "Définissez le mot de passe administrateur"
-                },
-                "help": {
-                    "en": "Use the help field to add an information for the admin about this question.",
-                    "fr": "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
-                },
-                "example": "Choose a password"
-            }
-        ]
+        "install" : [ ]
     }
 }
