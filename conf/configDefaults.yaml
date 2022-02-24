@@ -1,0 +1,96 @@
+--- #Default configuration for dweb-mirror
+# Note in YAML, indentation is significant, and you can't have multiple spaces after the ":"
+
+# Cache directory - where you want to store files, this directory must already exist
+# List of places to look for the Cache directory - will check all of them, and they don't need to exist
+# Paths can include unix conventions like ~ * . .. etc
+# Default is to look in home directory and root of any device (for example a USB) for directories "archiveorg"
+directories:
+  - ~/archiveorg # Home directory of user
+  - /Volumes/*/archiveorg # Any connected volume on standard unix
+  - /media/pi/*/archiveorg # At least on Internet-in-a-Box USB volumes are put here
+  - /media/usb*/archiveorg # IIAB v7 seems to put them here via usbmount
+  - /.data/archiveorg # This is where Rachel3+ puts its data
+  - /library/archiveorg # This is where IIAB wants content
+  - /data/archiveorg # Persistent and shared volume on OLIB
+rescanDirectories: 15 # How often to rescan for these directories (in seconds)
+# Where to find the ArchiveUI relative to the directory this file and the code resides in
+archiveui:
+  directories: # Note the code uses the first of these found to exist - note this should match the list in install.sh (which will be deprecated)
+    - ../dweb-archive/dist # Dev repo parallel to this
+    - node_modules/@internetarchive/dweb-archive/dist # Dev repo as dependency
+    - ../dweb-archive-dist # Dist repo cloned parallel to us (this is the most common config)
+    - node_modules/@internetarchive/dweb-archive-dist # Dist repo as a dependency
+bookreader:
+  directories: # Note the code uses the first of these found to exist
+    - ../bookreader/BookReader # Try a repo cloned to a directory parallel or installed to this one, which is presumably for development
+    - node_modules/@internetarchive/bookreader/BookReader # Or a repo installed as a dependency via 'yarn install'
+epubreader:
+  directories: # Note the code uses the first of these found to exist
+    - ../epubreader/reader # Try a repo cloned to a directory parallel or installed to this one, which is presumably for development
+    - ../../@futurepress/epubjs-reader/reader # Try repo installed as dependency at same level
+    - node_modules/@futurepress/epubjs-reader/reader # Or a repo installed as a dependency via 'yarn install'
+# How to connect to the net, for dweb-mirror HTTP directly to the gateway is usually the best way
+# especially for low CPU/low bandwidth environments.
+connect:
+  transports: # This is the list of transports that the server or crawler will use to fetch files
+    - 'HTTP'
+    #- 'IPFS'
+    #- 'WEBTORRENT'
+    #- 'GUN'
+    #- 'WOLK'
+  webtorrent: # Options to webtorrent
+    tracker: 'wrtc'   # May or may not work on different platforms and needs installing
+    trackers:
+      - 'wss://dweb.archive.org:6969' # TODO-DM242/round4
+      - 'wss://tracker.btorrent.xyz'
+      - 'wss://tracker.openwebtorrent.com'
+      - 'wss://tracker.fastcast.nz'
+  ipfs: # Options to IPFS
+    urlUrlstore: 'http://localhost:5001/api/v0/urlstore/add'
+  preferredStreamTransports: # A list, in order of preference of transports to use for streams, only works if they are listed in "connect" above.
+    - 'WEBTORRENT'
+    - 'HTTP'
+    - 'IPFS'
+mdns: "archive" # By default respond to archive.local via MDNS
+# The apps group include configuration only used by one application
+apps:
+  # internetarchive --server uses these
+  http:
+    port: __PORT__
+    morgan: ':method :url :req[range] :status :res[content-length] :response-time ms' # Used for logging
+  # internetarchive --crawl  uses these
+  crawl:
+    # An array of tasks each consists of { identifier, level, and optional search & related
+    # level is one of:
+    #      tile:       sufficient to draw Tile in its parent;
+    #      metadata:   including metadata info (not often used);
+    #      details:    enough to render a page, including e.g. low res video
+    #      all:        all files in the item - beware this can be large
+    # search & related consists of sort: (only -downloads supported at present), rows: how many items to retrieve;
+    #      level, search & related inside another search or related applies to the items retrieved by that search/related and nests indefinitely.
+    # Leave tasks empty in configDefaults, it will get overwritten by the user's tasks.
+    tasks: [ ]
+    # opts controls how the search performs
+    opts:
+      concurrency: 10 # No more than this many tasks at a time (typically 10 open file downloads or searches
+      limitTotalTasks: 3000 # No more than this many tasks total (typically one per item & file.
+      maxFileSize: 200000000 # Maximum size of any file retrieved
+      noCache: false # Set to true to ignore current cache contents, this is used to force the upstream server to look at each item and cache it
+      skipFetchFile: false # Set to true to ignore actually fetching files, most often used for debugging
+      # Default crawls if either search &| related are unspecified but crawling an item with level=detail||full
+      defaultDetailsSearch:
+        rows: 40            # Collect the first 40 items
+        sort: '-downloads'  # Based on the most popular
+        level: tile         # With enough information to show a tile
+      defaultDetailsRelated:
+        sort: '-downloads'  # And choose related based on downloads
+        rows: 6             # 6 related items
+        level: tile         # sufficiently to show a tile
+      startOnChange: true   # True if should start crawling any item that changes its level of crawing
+      crawlEpubs: true      # Set to false, or comment out to skip crawling epubs
+      crawlPalmLeaf: false  # Set to true, when on box hosting palmleafwiki
+  palmleafwiki: # TODO-MEDIAWIKI make installation auto change this
+    pagelink: 'https://palmleaf.org/wiki'  # Prefix for any pages to open in palmleaf, use 'http://MIRRORHOST/wiki/' if coinstalled
+  # copyDirectory: /Volumes/Transcend/test2 # Overrides where to store data, normally this is a command-line parameter if used.
+#============== Dont edit anything from here on down ============================

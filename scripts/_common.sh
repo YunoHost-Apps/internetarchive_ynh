@@ -4,8 +4,10 @@
 # COMMON VARIABLES
 #=================================================
 
+NODEJS_VERSION=12
+
 # dependencies used by the app
-pkg_dependencies="deb1 deb2"
+pkg_dependencies="git curl wget libsecret-1-dev"
 
 #=================================================
 # PERSONAL HELPERS
