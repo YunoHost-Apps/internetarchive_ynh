@@ -1,5 +1,5 @@
-SOURCE_URL=https://codeload.github.com/internetarchive/dweb-mirror/tar.gz/c44a66689179bca385e474e9475bd22ff6e4983d
-SOURCE_SUM=91db6bb47e6faf53516a0551f4cf03a0a9d709f7f10b99e0b950d3351449bbf2
+SOURCE_URL=https://codeload.github.com/internetarchive/dweb-mirror/tar.gz/a93ae9d681e86044633a2e7fdac0f508f75ea3b2
+SOURCE_SUM=09a7134d44d399522d7d8de79cbfe76f6fd55566c100d308fe0875619b494444
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
