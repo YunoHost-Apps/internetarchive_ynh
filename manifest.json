@@ -7,7 +7,7 @@
         "fr": "Version hors ligne de l’Internet Archive.",
         "mr": "इंटरनेट आर्काइव्हची ऑफलाइन आवृत्ती."
     },
-    "version": "0.2.51~ynh1",
+    "version": "2022.04.13~ynh1",
     "url": "https://github.com/internetarchive/dweb-mirror",
     "upstream": {
         "license": "AGPL-3.0-only",

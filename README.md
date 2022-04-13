@@ -17,7 +17,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Offline version of the Internet Archive.
 
-**Shipped version:** 0.2.51~ynh1
+**Shipped version:** 2022.04.13~ynh1
 
 
 
