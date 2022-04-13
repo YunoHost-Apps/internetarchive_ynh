@@ -13,7 +13,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Version hors ligne de l’Internet Archive.
 
-**Version incluse :** 0.2.51~ynh1
+**Version incluse :** 2022.04.13~ynh1
 
 
 
