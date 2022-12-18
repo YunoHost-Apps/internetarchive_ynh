@@ -20,7 +20,6 @@ Offline version of the Internet Archive.
 **Shipped version:** 2022.04.13~ynh1
 ## Documentation and resources
 
-* Official app website: <https://github.com/internetarchive/dweb-mirror>
 * Upstream app code repository: <https://github.com/internetarchive/dweb-mirror>
 * YunoHost documentation for this app: <https://yunohost.org/app_internetarchive>
 * Report a bug: <https://github.com/YunoHost-Apps/internetarchive_ynh/issues>

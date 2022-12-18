@@ -20,7 +20,6 @@ Version hors ligne de l’Internet Archive.
 **Version incluse :** 2022.04.13~ynh1
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://github.com/internetarchive/dweb-mirror>
 * Dépôt de code officiel de l'app : <https://github.com/internetarchive/dweb-mirror>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_internetarchive>
 * Signaler un bug : <https://github.com/YunoHost-Apps/internetarchive_ynh/issues>
