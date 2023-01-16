@@ -5,22 +5,22 @@ It shall NOT be edited by hand.
 
 # Internet Archive pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/internetarchive.svg)](https://dash.yunohost.org/appci/app/internetarchive) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/internetarchive.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/internetarchive.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/internetarchive.svg)](https://dash.yunohost.org/appci/app/internetarchive) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/internetarchive.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/internetarchive.maintain.svg)  
 [![Installer Internet Archive avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=internetarchive)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Internet Archive rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Internet Archive rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Version hors ligne de l’Internet Archive.
 
 **Version incluse :** 2022.04.13~ynh1
 ## Documentations et ressources
 
-* Dépôt de code officiel de l'app : <https://github.com/internetarchive/dweb-mirror>
+* Dépôt de code officiel de l’app : <https://github.com/internetarchive/dweb-mirror>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_internetarchive>
 * Signaler un bug : <https://github.com/YunoHost-Apps/internetarchive_ynh/issues>
 
@@ -36,4 +36,4 @@ ou
 sudo yunohost app upgrade internetarchive -u https://github.com/YunoHost-Apps/internetarchive_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
