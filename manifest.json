@@ -3,9 +3,9 @@
     "id": "internetarchive",
     "packaging_format": 1,
     "description": {
-        "en": "Offline version of the Internet Archive.",
-        "fr": "Version hors ligne de l’Internet Archive.",
-        "mr": "इंटरनेट आर्काइव्हची ऑफलाइन आवृत्ती."
+        "en": "Offline version of the Internet Archive",
+        "fr": "Version hors ligne de l’Internet Archive",
+        "mr": "इंटरनेट आर्काइव्हची ऑफलाइन आवृत्ती"
     },
     "version": "2022.04.13~ynh1",
     "url": "https://github.com/internetarchive/dweb-mirror",
@@ -20,7 +20,7 @@
         "url": "https://mitra.biz"
     },
     "requirements": {
-        "yunohost": ">= 4.3.0"
+        "yunohost": ">= 11.0.9"
     },
     "multi_instance": false,
     "services": [
@@ -35,8 +35,8 @@
             {
                 "name": "path",
                 "type": "path",
-                "example": "/example",
-                "default": "/example"
+                "example": "/internetarchive",
+                "default": "/internetarchive"
             },
             {
                 "name": "is_public",
