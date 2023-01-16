@@ -15,7 +15,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-Version hors ligne de l’Internet Archive.
+Version hors ligne de l’Internet Archive
 
 **Version incluse :** 2022.04.13~ynh1
 ## Documentations et ressources

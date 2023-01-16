@@ -15,7 +15,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-Offline version of the Internet Archive.
+Offline version of the Internet Archive
 
 **Shipped version:** 2022.04.13~ynh1
 ## Documentation and resources
